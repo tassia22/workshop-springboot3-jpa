@@ -25,23 +25,24 @@ public class Product implements Serializable {
 	private Long id;
 	private String name;
 	private String description;
-	private Double preco;
+	private Double price;
 	private String imgUrl;
 
 	@ManyToMany
 	@JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
 	private Set<Category> categories = new HashSet<>();
 
+
 	public Product() {
 
 	}
 
-	public Product(Long id, String name, String description, Double preco, String imgUrl) {
+	public Product(Long id, String name, String description, Double price, String imgUrl) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.preco = preco;
+		this.price = price;
 		this.imgUrl = imgUrl;
 	}
 
@@ -69,12 +70,12 @@ public class Product implements Serializable {
 		this.description = description;
 	}
 
-	public Double getPreco() {
-		return preco;
+	public Double getPrice() {
+		return price;
 	}
 
-	public void setPreco(Double preco) {
-		this.preco = preco;
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 
 	public String getImgUrl() {
