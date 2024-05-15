@@ -24,4 +24,9 @@ public class UserService {
 	   return obj.get();
 	}
 	
+	//inserindo no banco de dados um novo objeto do tipo usuario(user)
+	public User isert(User obj) {
+		return repository.save(obj);
+	}
+	
 }
